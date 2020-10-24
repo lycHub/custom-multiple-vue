@@ -11,7 +11,7 @@
   <script src="/public/rem.min.js"></script>
 </head>
 <body>
-<div id="home" v-cloak>
+<div id="singers" v-cloak>
   <van-tabs v-model="currentTab" @click="onClick">
     <van-tab title="推荐"></van-tab>
     <van-tab title="热歌榜"></van-tab>
@@ -22,7 +22,6 @@
       <van-cell v-for="aItem of item.albumBriefDetailInfos" :key="aItem.id" :title="aItem.albumInfo.title" />
     </van-cell-group>
   </div>
-
 </div>
 </body>
 </html>

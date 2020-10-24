@@ -6,6 +6,12 @@ module.exports = {
     port: 4200,
     watchOptions: {
       ignored: [/node_modules/, join(__dirname, 'postcss.config.js')]
+    },
+    proxy: {
+      "/api": {
+        target: "https://interface.music.163.com",
+        pathRewrite: {"^/api" : ""}
+      }
     }
   },
   module: {

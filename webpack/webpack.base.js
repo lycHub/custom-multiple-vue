@@ -16,7 +16,7 @@ const meta = {
 module.exports = {
   entry: {
     home: './src/pages/home/index.js',
-    singers: './src/pages/singers/index.js',
+    hots: './src/pages/hots/index.js',
   },
   output: {
     // context: __dirname,
@@ -65,10 +65,10 @@ module.exports = {
       meta
     }),
     new HtmlWebpackPlugin({
-      title: "歌手列表",
-      template: './src/pages/singers/index.html',
-      filename: "singers/index.html",
-      chunks: ['singers'],
+      title: "热歌榜",
+      template: './src/pages/hots/index.html',
+      filename: "hots/index.html",
+      chunks: ['hots'],
       meta
     })
   ]
