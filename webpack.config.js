@@ -45,6 +45,26 @@ module.exports = {
       {
         test: /\.(scss|sass)$/,
         use: ['style-loader', 'css-loader', 'px2rem-loader', 'sass-loader']
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8 * 1024,
+              outputPath: 'assets/images'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(ttf|svg|eot|woff|woff2|otf)$/,
+        use: 'url-loader'
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader'
       }
     ]
   },
@@ -67,7 +87,10 @@ module.exports = {
       template: './src/pages/singers/index.html',
       filename: "singers/index.html",
       chunks: ['singers'],
-      meta
+      meta,
+      scripts: [
+        'http://example.com/somescript.js'
+      ]
     }),
   ]
 }

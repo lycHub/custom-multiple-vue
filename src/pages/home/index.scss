@@ -4,6 +4,8 @@
   .box {
     width: 100px;
     height: 100px;
-    background-color: #ffb696;
+    border: 1px solid #ffb696;
+    background: url("../../assets/images/zgcf.jpg") no-repeat;
+    background-size: cover;
   }
 }

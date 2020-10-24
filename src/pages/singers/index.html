@@ -13,6 +13,9 @@
 <body>
 <div id="singers" v-cloak>
   <h2>{{ title }}</h2>
+  <p>
+    <img src="../../assets/images/j1.jpg" />
+  </p>
   <ul>
     <li v-for="item of navs" :key="item.name">
       <a :href="item.link">{{ item.name }}</a>

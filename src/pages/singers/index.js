@@ -1,5 +1,5 @@
 import './index.scss';
-import Vue from 'vue/dist/vue.min';
+import Vue from 'vue';
 
 const singers = new Vue({
   el: '#singers',

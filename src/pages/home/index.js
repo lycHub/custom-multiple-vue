@@ -1,5 +1,5 @@
 import './index.scss';
-import Vue from 'vue/dist/vue.min';
+import Vue from 'vue';
 
 const home = new Vue({
   el: '#home',
