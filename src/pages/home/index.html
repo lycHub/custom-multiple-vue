@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title><%= htmlWebpackPlugin.options.title %></title>
+  <style>
+      [v-cloak]{
+          display: none;
+      }
+  </style>
 </head>
 <body>
-<div id="home">
-  首页
+<div id="home" v-cloak>
+  <h2>{{ title }}</h2>
   <ul>
-    <li>
-      <a href="./home">首页</a>
-      <a href="./singers">歌手列表</a>
+    <li v-for="item of navs" :key="item.name">
+      <a :href="item.link">{{ item.name }}</a>
     </li>
   </ul>
 </div>

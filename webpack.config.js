@@ -19,7 +19,12 @@ module.exports = {
   output: {
     // context: __dirname,
     path: join(__dirname, 'dist'),
-    filename: "[name]/[name].js"
+    filename: "[name]/[name].[contenthash:8].js"
+  },
+  resolve: {
+    alias: {
+      vue$: "vue/dist/vue.esm.js"
+    }
   },
   devServer: {
 
