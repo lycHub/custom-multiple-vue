@@ -1,16 +1,10 @@
 @import '../../assets/styles/index.scss';
 #home {
-  color: aqua;
-  .box {
-    width: 100px;
-    height: 100px;
-    border: 1px solid #ffb696;
-    background: url("../../assets/images/zgcf.jpg") no-repeat;
-    background-size: cover;
-    transition: all .3s;
-  }
-  .tabs {
+  .navs {
     display: flex;
-    align-items: center;
+    justify-content: space-around;
+    .active a {
+      color: brown;
+    }
   }
 }

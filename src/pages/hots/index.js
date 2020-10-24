@@ -10,11 +10,10 @@ Vue.use(Cell);
 Vue.use(CellGroup);
 
 const singers = new Vue({
-  el: '#singers',
+  el: '#hots',
   data: {
     title: '歌手列表',
     tpic,
-    currentTab: 1,
     navs: [
       {
         name: '首页',
@@ -26,13 +25,6 @@ const singers = new Vue({
       }
     ],
     list: []
-  },
-  methods: {
-    onClick(name) {
-      if (name === 0) {
-        location.href = '/home';
-      }
-    },
   },
   created () {
     axios.get('//m.ximalaya.com/m-revision/page/index/queryIndexCategoryTabContent?moduleKey=yinyue').then(({ data }) => {

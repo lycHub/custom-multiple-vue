@@ -11,11 +11,11 @@
   <script src="/public/rem.min.js"></script>
 </head>
 <body>
-<div id="singers" v-cloak>
-  <van-tabs v-model="currentTab" @click="onClick">
-    <van-tab title="推荐"></van-tab>
-    <van-tab title="热歌榜"></van-tab>
-  </van-tabs>
+<div id="hots" v-cloak>
+  <ul class="navs">
+    <li><a href="/home">推荐</a></li>
+    <li class="active"><a href="/hots">热歌榜</a></li>
+  </ul>
   <div v-for="item of list" :key="item.moduleInfo.id" :title="item.moduleInfo.displayName">
     <h3>{{ item.moduleInfo.displayName }}</h3>
     <van-cell-group>

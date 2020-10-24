@@ -25,13 +25,6 @@ const home = new Vue({
     ],
     list: []
   },
-  methods: {
-    onClick(name, title) {
-      if (name === 1) {
-        location.href = '/hots';
-      }
-    },
-  },
   created () {
     axios.get('//m.ximalaya.com/m-revision/page/index/queryIndexCategoryTabContent?moduleKey=youshengshu').then(({ data }) => {
       this.list = data.data.moduleContent.moduleRankDatas;
