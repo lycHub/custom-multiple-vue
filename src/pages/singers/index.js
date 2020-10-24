@@ -10,11 +10,11 @@ const singers = new Vue({
     navs: [
       {
         name: '首页',
-        link: './home'
+        link: '/home'
       },
       {
         name: '歌手列表',
-        link: './singers'
+        link: '/singers'
       }
     ]
   }

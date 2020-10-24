@@ -1,9 +1,6 @@
 const { join } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
 // console.log('node env', process.env.NODE_ENV);
 
 const meta = {
@@ -17,41 +14,28 @@ const meta = {
 
 
 module.exports = {
-  mode: 'development',
   entry: {
     home: './src/pages/home/index.js',
     singers: './src/pages/singers/index.js',
   },
   output: {
     // context: __dirname,
-    path: join(__dirname, 'dist'),
-    filename: "[name]/[name].[contenthash:8].js"
+    path: join(__dirname, '../dist'),
+    filename: "[name]/[name].[contenthash:8].js",
+    publicPath: "/"
   },
   resolve: {
     alias: {
       vue$: "vue/dist/vue.esm.js"
     }
   },
-  devServer: {
-    port: 4200,
-    watchOptions: {
-      ignored: [/node_modules/, join(__dirname, 'postcss.config.js')]
-    }
-  },
   module: {
+    noParse: /lodash/,
     rules: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader']
-      },
-      {
-        test: /\.(scss|sass)$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -68,26 +52,11 @@ module.exports = {
       {
         test: /\.(ttf|svg|eot|woff|woff2|otf)$/,
         use: 'url-loader'
-      },
-      // {
-      //   test: /\.html$/i,
-      //   use: [
-      //     {
-      //       loader: "html-loader",options: {
-      //         minimize: false,
-      //       },
-      //     }
-      //   ]
-      // }
+      }
     ]
   },
   plugins: [
-    // new CopyWebpackPlugin({
-    //   patterns: [{
-    //     from: './public',
-    //     to: join(__dirname, 'dist/public', '[name].[ext]')
-    //   }]
-    // }),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "首页",
       template: './src/pages/home/index.html',
@@ -101,6 +70,6 @@ module.exports = {
       filename: "singers/index.html",
       chunks: ['singers'],
       meta
-    }),
+    })
   ]
 }
