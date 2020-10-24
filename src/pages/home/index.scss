@@ -1,4 +1,9 @@
 @import '../../assets/styles/index.scss';
 #home {
   color: aqua;
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: #ffb696;
+  }
 }
