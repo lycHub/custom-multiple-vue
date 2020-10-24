@@ -7,5 +7,10 @@
     border: 1px solid #ffb696;
     background: url("../../assets/images/zgcf.jpg") no-repeat;
     background-size: cover;
+    transition: all .3s;
+  }
+  .tabs {
+    display: flex;
+    align-items: center;
   }
 }

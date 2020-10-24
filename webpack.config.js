@@ -33,7 +33,10 @@ module.exports = {
     }
   },
   devServer: {
-    port: 4200
+    port: 4200,
+    watchOptions: {
+      ignored: [/node_modules/, join(__dirname, 'postcss.config.js')]
+    }
   },
   module: {
     rules: [
@@ -44,7 +47,7 @@ module.exports = {
       },
       {
         test: /\.(scss|sass)$/,
-        use: ['style-loader', 'css-loader', 'px2rem-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -62,10 +65,16 @@ module.exports = {
         test: /\.(ttf|svg|eot|woff|woff2|otf)$/,
         use: 'url-loader'
       },
-      {
-        test: /\.html$/i,
-        loader: 'html-loader'
-      }
+      // {
+      //   test: /\.html$/i,
+      //   use: [
+      //     {
+      //       loader: "html-loader",options: {
+      //         minimize: false,
+      //       },
+      //     }
+      //   ]
+      // }
     ]
   },
   plugins: [
@@ -87,10 +96,7 @@ module.exports = {
       template: './src/pages/singers/index.html',
       filename: "singers/index.html",
       chunks: ['singers'],
-      meta,
-      scripts: [
-        'http://example.com/somescript.js'
-      ]
+      meta
     }),
   ]
 }

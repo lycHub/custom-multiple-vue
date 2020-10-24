@@ -14,7 +14,7 @@
 <div id="home" v-cloak>
   <h2>{{ title }}</h2>
   <div class="box"></div>
-  <ul>
+  <ul class="tabs">
     <li v-for="item of navs" :key="item.name">
       <a :href="item.link">{{ item.name }}</a>
     </li>
