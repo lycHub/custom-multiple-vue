@@ -1,11 +1,9 @@
 import './index.scss';
 import Vue from 'vue';
-// import { Button } from 'vant';
-// Vue.use(Button);
-
-import { Image as VanImage } from 'vant';
+import { Image as VanImage, Button } from 'vant';
 
 Vue.use(VanImage);
+Vue.use(Button);
 const home = new Vue({
   el: '#home',
   data: {
